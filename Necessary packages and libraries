@@ -1,0 +1,37 @@
+# Install devtools 
+install.packages("devtools")
+
+# Install spatstat.core from GitHub
+devtools::install_github("spatstat/spatstat.core")
+
+install.packages("FNN")
+
+# Install the INLA package from the INLA repository
+
+options(timeout = 3000)  
+install.packages("INLA", repos = "https://inla.r-inla-download.org/R/stable", dep = TRUE)
+
+install.packages("fmesher")
+install.packages("INLA", repos=c(getOption("repos"), INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(c("graph", "Rgraphviz"), dep=TRUE)
+
+install.packages("rgeos")
+
+
+
+# Loading Necessary Libraries
+library(sp)
+library(raster)
+library(spdep)       # For spatial dependencies
+library(MASS)        # For statistical methods
+library(INLA)        # For integrated nested Laplace approximations
+library(fields)      # For tools for spatial data
+library(sf)
+library(spatstat)
+library(dplyr)
+library(osmdata)
+library(ggplot2)
+library(spatstat.core)
+library(FNN)
